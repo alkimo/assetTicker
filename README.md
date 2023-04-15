@@ -31,10 +31,10 @@
 
 ## Technologies
 
-🚀 Flutter
-🧪 TDD
-🧱 Clean Architecture
-💹 Yahoo Finance API
+- 🚀 Flutter
+- 🧪 TDD
+- 🧱 Clean Architecture
+- 💹 Yahoo Finance API
 
 ## Installation
 
