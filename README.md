@@ -1,6 +1,10 @@
 # Stock Variation Tracker
 
-📈📊 A Flutter project for tracking stock variations using the Yahoo Finance API.
+💻💹 A Flutter project for tracking stock variations using the Yahoo Finance API.
+
+This mobile app is a Flutter project designed for tracking stock variations using the Yahoo Finance API. The app follows a clean architecture and utilizes TDD for reliable and easy maintenance. 🧱🧪
+
+This project is ideal for anyone looking to create a reliable and effective stock price variation tracking app in Flutter, with a strong focus on TDD, clean architecture, and the use of the Yahoo Finance API. 📈📊
 
 ## Description
 
