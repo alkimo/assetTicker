@@ -14,14 +14,14 @@
 
 ## Features
 
-🔍 Search for stocks: Users will be able to search for stocks using their ticker symbols, and view detailed information about each stock.
-📈 Real-time updates: The app will provide real-time updates on stock prices and percentage variations over the last 30 days.
-📊 Historical data: Users will be able to view historical data on stock prices and variations, to gain a better understanding of long-term trends.
+- 🔍 Search for stocks: Users will be able to search for stocks using their ticker symbols, and view detailed information about each stock.
+- 📈 Real-time updates: The app will provide real-time updates on stock prices and percentage variations over the last 30 days.
+- 📊 Historical data: Users will be able to view historical data on stock prices and variations, to gain a better understanding of long-term trends.
 
 ## Architecture
 
-🧱 The project will follow the Clean Architecture principles, with a clear separation of concerns between the domain, data, and presentation layers.
-🧪 The app will be developed using Test-Driven Development (TDD), with the help of the Mockito library for mocking dependencies.
+- 🧱 The project will follow the Clean Architecture principles, with a clear separation of concerns between the domain, data, and presentation layers.
+- 🧪 The app will be developed using Test-Driven Development (TDD), with the help of the Mockito library for mocking dependencies.
 
 ## Table of Contents
 - [Technologies](#technologies)
