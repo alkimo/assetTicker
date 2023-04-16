@@ -15,12 +15,12 @@ This use case describes how a user may visualize financial asset data.
 5. System redirects the user to asset data visualization page.
 
 ## Exceptions
-- A1: If the user enters an invalid ticker, the system displays an Bad Data error message.
+- A1: If the user enters an invalid ticker, the system displays a Bad Data error message.
 - A2: If the user enters a valid ticker and the API returns bad data, the system displays an unexpected error message.
 - A3: If the user enters a valid ticker and the server fails, the system displays an unexpected error message.
 - A4: If the user enters a valid ticker and the API returns an invalid url, the system displays an unexpected error message.
 
-## Postconditions
+## Post conditions
 - The user is redirected to the asset data visualization page.
 
 ## Assumptions
