@@ -5,11 +5,12 @@ Feature: DataFetch
 
   Scenario: Successful Financial Asset Data Fetch By Ticker
     Given I am in the initial search screen
-    When I enter a valid ticker string and tap the search button
-    Then I should be taken to the asset page
-    And I should be shown the asset value variation in a Graphic and a Table
+    When I enter a ticker string and tap the search button
+    But The systems validates if the ticker represents a valid financial asset
+    Then It should make an API request to fetch the asset data
+    And Display it for the user using a graphic and a table
 
   Scenario: Unsuccessful Financial Asset Data Fetch By Invalid Ticker
-    Given I am in the initial screen
+    Given I am in the initial search screen
     When I enter an invalid ticker and tap the search button
     Then I should receive an error message
