@@ -29,16 +29,23 @@ abstract class HttpClient {
 class HttpClientSpy extends Mock implements HttpClient {}
 
 void main() {
+  HttpClient? httpClient;
+  String? url;
+  RemoteFetch? sut;
+
+  setUp((){
+    httpClient = HttpClientSpy();
+    url = faker.internet.httpUrl();
+
+    sut = RemoteFetch(httpClient: httpClient!, url: url!);
+  });
+
   test('Should Call HttpClient With Correct URL', () async {
-    final httpClient = HttpClientSpy();
-    final url = faker.internet.httpUrl();
 
-    final sut = RemoteFetch(httpClient: httpClient, url: url);
+    await sut?.fetch();
 
-    await sut.fetch();
-
-    verify(httpClient.request(
-        url: url,
+    verify(httpClient?.request(
+        url: url!,
         method: 'post',
     ));
   });
