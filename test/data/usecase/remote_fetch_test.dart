@@ -12,13 +12,17 @@ class RemoteFetch {
   });
 
   Future<void> fetch() async {
-    await httpClient.request(url: url);
+    await httpClient.request(
+      url: url,
+      method: 'post',
+    );
   }
 }
 
 abstract class HttpClient {
   Future<void>? request({
     required String url,
+    required String method,
   });
 }
 
@@ -33,6 +37,9 @@ void main() {
 
     await sut.fetch();
 
-    verify(httpClient.request(url: url));
+    verify(httpClient.request(
+        url: url,
+        method: 'post',
+    ));
   });
 }
