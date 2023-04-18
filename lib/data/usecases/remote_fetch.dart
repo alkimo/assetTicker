@@ -1,6 +1,9 @@
+import 'package:asset_variation/domain/usecases/usecases.dart';
+
+import '../../domain/entities/entities.dart';
 import '../http/http.dart';
 
-class RemoteFetch {
+class RemoteFetch implements Fetch {
   final HttpClient httpClient;
   final String ticker;
 
@@ -9,6 +12,7 @@ class RemoteFetch {
     required this.ticker,
   });
 
+  @override
   Future<void> fetch() async {
     await httpClient.request(
       url: _apiURL(),

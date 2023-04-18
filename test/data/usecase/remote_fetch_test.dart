@@ -8,7 +8,7 @@ class HttpClientSpy extends Mock implements HttpClient {}
 
 void main() {
   HttpClient? httpClient;
-  String? ticker;
+  String ticker;
   String? url;
   RemoteFetch? sut;
 
@@ -16,9 +16,10 @@ void main() {
     httpClient = HttpClientSpy();
     ticker = "PETR4.SA";
 
-    sut = RemoteFetch(httpClient: httpClient!, ticker: ticker!);
+    sut = RemoteFetch(httpClient: httpClient!, ticker: ticker);
     url = "https://query2.finance.yahoo.com/v8/finance/chart/$ticker";
   });
+
 
   test('Should Call HttpClient With URL With Proper Ticker', () async {
     await sut?.fetch();
