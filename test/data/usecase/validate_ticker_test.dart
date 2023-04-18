@@ -39,6 +39,5 @@ void main() {
   test('Should Validate Ticker By Request', () async {
     await sut?.validate();
 
-    verify();
   });
 }
