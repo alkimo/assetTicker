@@ -15,18 +15,27 @@ void main(){
   String? url;
   Uri? uri;
 
+  setUpAll((){
+    client = MockClient();
+    sut = HttpAdapter(client: client!);
+    url = faker.internet.httpUrl();
+    uri = Uri.parse(url!);
+  });
+
   group('GET HTTP verb', (){
-    setUp((){
-      client = MockClient();
-      sut = HttpAdapter(client: client!);
-      url = faker.internet.httpUrl();
-      uri = Uri.parse(url!);
-    });
 
     test('Should Call Get With Correct Values', () async {
       await sut?.request(url: url!, method: 'get');
 
       verify(client?.get(uri));
+    });
+  });
+
+  group('POST HTTP Verb', () {
+    test('Should Call Post With Correct Values', () async {
+      await sut?.request(url: url!, method: 'post');
+
+      verify(client?.post(uri));
     });
   });
 }
