@@ -1,6 +1,5 @@
 import 'package:asset_variation/domain/usecases/usecases.dart';
 
-import '../../domain/entities/entities.dart';
 import '../http/http.dart';
 
 class RemoteFetch implements Fetch {
