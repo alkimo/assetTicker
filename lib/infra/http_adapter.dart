@@ -1,5 +1,6 @@
-import 'package:asset_variation/data/http/http.dart';
 import 'package:http/http.dart';
+
+import '../data/http/http.dart';
 
 class HttpAdapter implements HttpClient {
   final Client client;
