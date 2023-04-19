@@ -1,5 +1,5 @@
 abstract class HttpClient {
-  Future<dynamic>? request({
+  Future<void>? request({
     required String url,
     required String method,
   });

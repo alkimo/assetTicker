@@ -10,12 +10,12 @@ import 'http_adapter_test.mocks.dart';
 @GenerateNiceMocks([MockSpec<Client>()])
 
 void main(){
-  group('GET HTTP verb', (){
-    MockClient? client;
-    HttpAdapter? sut;
-    String? url;
-    Uri? uri;
+  MockClient? client;
+  HttpAdapter? sut;
+  String? url;
+  Uri? uri;
 
+  group('GET HTTP verb', (){
     setUp((){
       client = MockClient();
       sut = HttpAdapter(client: client!);
