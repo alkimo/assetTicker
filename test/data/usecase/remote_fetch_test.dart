@@ -8,7 +8,7 @@ class MockClient extends Mock implements HttpClient {}
 
 void main() {
   String ticker;
-  String? url;
+  String? quoteUrl;
   RemoteFetch? sut;
   MockClient? client;
 
@@ -17,7 +17,7 @@ void main() {
     ticker = "PETR4.SA";
 
     sut = RemoteFetch(httpClient: client!, ticker: ticker);
-    url = "https://finance.yahoo.com/quote/$ticker";
+    quoteUrl = "https://finance.yahoo.com/quote/$ticker";
   });
 
 
@@ -25,7 +25,7 @@ void main() {
     await sut?.fetch();
 
     verify(await client?.request(
-      url: url!,
+      url: quoteUrl!,
       method: 'get'
     ));
   });
