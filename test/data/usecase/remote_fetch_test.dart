@@ -8,7 +8,7 @@ class MockClient extends Mock implements HttpClient {}
 
 void main() {
   String ticker;
-  String? quoteUrl;
+  String? tickerVerificationUrl;
   RemoteFetch? sut;
   MockClient? client;
 
@@ -17,15 +17,15 @@ void main() {
     ticker = "PETR4.SA";
 
     sut = RemoteFetch(httpClient: client!, ticker: ticker);
-    quoteUrl = "https://finance.yahoo.com/quote/$ticker";
+    tickerVerificationUrl = "https://finance.yahoo.com/quote/$ticker";
   });
 
 
-  test('Should Call TickerValidator With Proper Ticker', () async {
+  test('RemoteFetch Executing Fetch Executes TickerVerification', () async {
     await sut?.fetch();
 
     verify(await client?.request(
-      url: quoteUrl!,
+      url: tickerVerificationUrl!,
       method: 'get'
     ));
   });
