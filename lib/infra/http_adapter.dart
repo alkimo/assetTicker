@@ -9,10 +9,11 @@ class HttpAdapter implements HttpClient {
   });
 
   @override
-  Future<void> request({
+  Future<dynamic> request({
     required String url,
     required String method,
   }) async {
+
     final uri = Uri.parse(url);
 
     if(method == 'get') {

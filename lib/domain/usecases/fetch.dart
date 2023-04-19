@@ -1,5 +1,7 @@
-import '../entities/entities.dart';
+import 'package:asset_variation/domain/usecases/ticker_validator.dart';
 
-abstract class Fetch {
-  Future<void> fetch() async {}
+import './usecases.dart';
+
+abstract class Fetch implements TickerValidator {
+  Future<void>? fetch() async {}
 }

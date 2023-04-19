@@ -1,3 +1,3 @@
 abstract class TickerValidator{
-  Future<void> validate() async {}
+  Future<void>? validateTicker() async {}
 }

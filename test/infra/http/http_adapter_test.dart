@@ -10,14 +10,17 @@ import 'http_adapter_test.mocks.dart';
 @GenerateNiceMocks([MockSpec<Client>()])
 
 void main(){
-  MockClient? client;
   HttpAdapter? sut;
+
+  MockClient? client;
   String? url;
   Uri? uri;
 
   setUpAll((){
     client = MockClient();
+
     sut = HttpAdapter(client: client!);
+
     url = faker.internet.httpUrl();
     uri = Uri.parse(url!);
   });
