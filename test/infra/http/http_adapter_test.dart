@@ -3,6 +3,7 @@ import 'package:http/http.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
+import 'package:faker/faker.dart';
 
 import 'http_adapter_test.mocks.dart';
 
@@ -18,7 +19,7 @@ void main(){
     setUp((){
       client = MockClient();
       sut = HttpAdapter(client: client!);
-      url = "https://query2.finance.yahoo.com/v8/finance/chart/PETR4.SA";
+      url = faker.internet.httpUrl();
       uri = Uri.parse(url!);
     });
 
