@@ -1,9 +1,10 @@
-import 'package:asset_variation/infra/infra.dart';
 import 'package:http/http.dart';
-import 'package:mockito/annotations.dart';
-import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 import 'package:faker/faker.dart';
+import 'package:mockito/mockito.dart';
+import 'package:mockito/annotations.dart';
+
+import 'package:asset_variation/infra/infra.dart';
 
 import 'http_adapter_test.mocks.dart';
 
@@ -26,7 +27,6 @@ void main(){
   });
 
   group('GET HTTP verb', (){
-
     test('Should Call Get With Correct Values', () async {
       await sut?.request(url: url!, method: 'get');
 

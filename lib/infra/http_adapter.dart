@@ -1,5 +1,6 @@
-import 'package:asset_variation/data/http/http.dart';
 import 'package:http/http.dart';
+
+import '../data/http/http.dart';
 
 class HttpAdapter implements HttpClient {
   final Client client;
@@ -17,9 +18,9 @@ class HttpAdapter implements HttpClient {
     final uri = Uri.parse(url);
 
     if(method == 'get') {
-      await client.get(uri);
+      return await client.get(uri);
     } else if (method == 'post') {
-      await client.post(uri);
+      return await client.post(uri);
     }
   }
 }
