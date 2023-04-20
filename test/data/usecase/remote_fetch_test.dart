@@ -5,6 +5,7 @@ import 'package:mockito/mockito.dart';
 
 import 'package:asset_variation/data/http/http.dart';
 import 'package:asset_variation/data/usecases/usecases.dart';
+
 import './remote_fetch_test.mocks.dart';
 import './yahoo_data_map.dart';
 
