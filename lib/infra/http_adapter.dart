@@ -18,9 +18,9 @@ class HttpAdapter implements HttpClient {
     final uri = Uri.parse(url);
 
     if(method == 'get') {
-      await client.get(uri);
+      return await client.get(uri);
     } else if (method == 'post') {
-      await client.post(uri);
+      return await client.post(uri);
     }
   }
 }

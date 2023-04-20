@@ -1,3 +1,7 @@
+import 'dart:convert';
+
+import 'package:asset_variation/domain/entities/asset_entity.dart';
+
 import '../../domain/usecases/usecases.dart';
 
 import '../http/http.dart';
@@ -12,21 +16,27 @@ class RemoteFetch implements Fetch {
   });
 
   @override
-  Future<void>? fetch() async {
-    validateTicker();
+  Future<AssetEntity> fetch() async {
+    await validateTicker();
 
-    await httpClient.request(
+    final httpResponse = await httpClient.request(
       url: _getApiURL(),
       method: 'get',
     );
+
+    return AssetEntity.fromJson(httpResponse);
   }
 
   @override
-  Future<void>? validateTicker() async {
-    await httpClient.request(
+  Future<bool> validateTicker() async {
+    final httpResponse = await httpClient.request(
       url: _getTickerValidatorURL(),
       method: 'get',
     );
+
+    final data = httpResponse;
+
+    return data.containsKey('timestamp');
   }
 
   String _getApiURL(){
